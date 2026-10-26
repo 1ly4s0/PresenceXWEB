@@ -1,0 +1,14 @@
+node_modules/
+_site/
+artifacts/
+test-results/
+.env
+.env.*
+*.log
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+.DS_Store
+Thumbs.db
