@@ -19,3 +19,18 @@ test('Published pages have complete metadata and one main heading',()=>{
     assert.ok(!$.html().includes('fonts.googleapis.com'));
   }
 });
+
+test('Every published Discord invitation uses the official community link',()=>{
+  const site=build(),invite='https://discord.gg/tecno-bros-885235460178342009';
+  let invitations=0;
+  for(const file of Object.keys(pages)){
+    const $=load(readFileSync(join(site,file),'utf8'));
+    $('a[href]').each((_,element)=>{
+      const href=$(element).attr('href'),url=new URL(href,origin);
+      if(url.hostname==='discord.gg'||(['discord.com','discordapp.com'].includes(url.hostname)&&url.pathname.startsWith('/invite/'))){
+        invitations++;assert.equal(href,invite,file);
+      }
+    });
+  }
+  assert.ok(invitations>=Object.keys(pages).length);
+});
