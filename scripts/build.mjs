@@ -39,8 +39,10 @@ function editContent($, filename) {
     $('.step').eq(2).find('p').text('Envía la actividad a Discord. Si usas una automatización, revisa también los permisos y las restricciones de batería del móvil.');
     $('.feature-card h3').filter((_, e) => $(e).text() === 'Imágenes que sí renderizan').text('Tus imágenes en Discord');
     $('.feature-card h3').filter((_, e) => $(e).text() === 'Perfil completo').text('Tu perfil de Discord');
-    $('.news-date').attr('datetime', '2026-10-26').text('26 OCT 2026');
-    $('.news-row p').text('RPC personalizado, juegos, música y apps en un mismo lugar, con permisos guiados e imágenes propias.');
+    $('.news-date').attr('datetime', '2026-11-09').text('9 NOV 2026');
+    $('.news-row h3').text('Battly Mobile y PresenceX: tu partida, en Discord');
+    $('.news-row p').text('La integración con Battly Mobile permite compartir tu partida de Minecraft. Repasamos cómo vincular las apps y las correcciones de la 2.0.1.');
+    $('.news-row > a').attr({href:'novedades.html#v2-0-1','aria-label':'Leer las novedades de PresenceX 2.0.1 y Battly Mobile'});
     $('.demo-layout').after('<p class="demo-note">Ejemplos ilustrativos de una actividad. El aspecto final puede variar según el cliente de Discord.</p>');
   }
   if (filename === 'funciones.html') {
@@ -73,6 +75,7 @@ function editContent($, filename) {
     $('.release time').attr('datetime', '2026-10-26').text('26 de octubre de 2026');
     $('.release h2').text('PresenceX 2.0, disponible en Google Play');
     $('.release > p').text('La nueva versión reúne RPC personalizado, juegos, Media RPC y Apps RPC en Crear. También añade una configuración guiada de permisos y herramientas para guardar y recuperar presencias.');
+    $('.release-list').prepend(`<article class="release" id="v2-0-1"><div class="release-version"><span>2.0.1</span><time datetime="2026-11-09">9 de noviembre de 2026</time></div><h2>Battly Mobile y PresenceX: tu partida, en Discord</h2><p>Battly Mobile y PresenceX son dos proyectos de TECNO BROS Studios. Ahora puedes vincularlos para mostrar tu partida de Minecraft en tu perfil de Discord desde Android.</p><h3>Cómo vincularlos</h3><p>Abre los ajustes de Battly Mobile, vincula PresenceX y activa la integración en el apartado Battly de PresenceX. La actividad se actualiza mientras juegas, también en segundo plano. Al cerrar Minecraft, se recupera tu presencia anterior.</p><p>Los nombres del mundo y del servidor permanecen ocultos salvo que actives sus opciones. Puedes desactivar la integración o desvincular las apps cuando quieras.</p><p><a href="https://battlylauncher.com/">Conocer Battly</a></p><h3>Correcciones de la 2.0.1</h3><ul><li>Una interrupción temporal de conexión ya no hace fallar inmediatamente la petición al aplicar un juego.</li><li>Los mensajes distinguen entre sesión caducada, tiempo de espera agotado y otros errores.</li><li>Corregido un cierre al volver a PresenceX mientras arrancaba una tarea en segundo plano.</li><li>El cierre del WebSocket se realiza fuera del bloqueo de sesión para evitar que detener el RPC congele la app.</li></ul><p>Esta actualización reúne además las mejoras recientes de Media RPC y el progreso de reproducción, las insignias oficiales de Discord y el espaciado de la biografía.</p><p>La disponibilidad de la actualización depende del proceso de revisión y distribución de Google Play.</p></article>`);
   }
   if (filename === 'ayuda.html') $('.page-hero h1').text('Ayuda con PresenceX.');
   if (filename === 'creditos.html') {
